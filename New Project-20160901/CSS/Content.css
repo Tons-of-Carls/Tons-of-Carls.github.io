@@ -1,0 +1,13 @@
+/*
+* Content Page CSS
+*/
+
+.body{
+background-color:rgba(120,120,120,.3);
+min-width:600px;
+padding:1em;
+margin-left:200px;
+margin-right:200px;
+margin-top:50px;
+margin-bottom:15vh;
+}
