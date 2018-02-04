@@ -80,7 +80,7 @@ function getPosition(position)
 function getData()
 {
 	var xmlHTTP = new XMLHttpRequest()	
-	xmlHTTP.open("GET", "http://www.mapquestapi.com/directions/v2/route?key=EQqJGc8Kerul1U4YYVO082Aomcxh8ZDT&from=" + String(start_latitude) + "," + String(start_longitude) + "&to=" + + String(end_latitude) + "," + String(end_longitude), false)
+	xmlHTTP.open("GET", "https://www.mapquestapi.com/directions/v2/route?key=EQqJGc8Kerul1U4YYVO082Aomcxh8ZDT&from=" + String(start_latitude) + "," + String(start_longitude) + "&to=" + + String(end_latitude) + "," + String(end_longitude), false)
 	xmlHTTP.send(null)
 	json_data = JSON.parse(xmlHTTP.response)
 	
