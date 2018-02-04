@@ -17,7 +17,10 @@ var price_per_gallon = 2.603
 function getNumPeople()
 {	
 	num_of_people = parseInt(document.getElementById("amount_of_people").value)
-	getLocation()
+	if (num_of_people != null && num_of_people > 0)
+	{
+		getLocation()
+	}
 }
 
 
