@@ -34,4 +34,5 @@ firebaseValueRef.on('child_added', function(snapshot){
 function sendData()
 {
     firebaseValueRef.child(String(message_number)).set(input_text_element.value)
+    input_text_element.value = ''
 }
