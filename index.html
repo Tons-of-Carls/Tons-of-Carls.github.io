@@ -1,13 +1,32 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script src = "gas.js"></script>
-	</head>
-	<body id = "body">
-		<p id = "prompt">Amount of People riding with you (inclusive)</p>
-		<input id = "amount_of_people" type="number" name = "amountOfPeople"></input>
-		<input id = "sub" type="submit" value = "Submit" onclick = "getNumPeople()">
-		
-		<p id = "demo"></p>
-	</body>
-	
+    <head>
+        <title>APILib</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDyTOReJ7KeP_nVkgGVZXWY1dQwel7LTfI",
+            authDomain: "apilib-a693f.firebaseapp.com",
+            databaseURL: "https://apilib-a693f.firebaseio.com",
+            projectId: "apilib-a693f",
+            storageBucket: "apilib-a693f.appspot.com",
+            messagingSenderId: "120829103905"
+          };
+          firebase.initializeApp(config);
+        </script>
+        
+        
+    </head>
+    <body>
+        <input id = "textInput" type="text" value = "" name = "toDatabase">
+        <button onclick="sendData()">Press Me</button>
+        
+        <ul id = "messages">
+            
+        </ul>
+        
+        <script src="scripts/apilib.js"></script>
+    </body>
 </html>
