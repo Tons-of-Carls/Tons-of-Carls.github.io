@@ -1,5 +1,5 @@
-var firebaseRef = firebase.database().ref()
-var firebaseValueRef = firebaseRef.child("Main");
+var firebaseRef = firebase.database().ref();
+var firebaseValueRef = firebase.database().ref("Main");
 
 var logged_in = false
 var initial_setup = false
@@ -57,6 +57,6 @@ function signout()
 function sendData()
 {
     var input_text_element = document.getElementById("textInput");
-    firebaseValueRef.post().set(firebase.auth().currentUser.displayName + ': ' + input_text_element.value)
+    firebaseValueRef.push().set(firebase.auth().currentUser.displayName + ': ' + input_text_element.value)
     input_text_element.value = ''
 }
