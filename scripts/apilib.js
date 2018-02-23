@@ -1,8 +1,6 @@
 var firebaseRef = firebase.database().ref()
 var firebaseValueRef = firebaseRef.child("Main");
 
-var message_number = 0
-
 var logged_in = false
 var initial_setup = false
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -21,23 +19,19 @@ firebase.auth().signInWithPopup(provider).then(function(results){
                 {
                     initial_setup = true
                     var messages_list = document.getElementById("messages");
-
+                    
                     if (snapshot.val() == null)
                     {
                         messages_list.innerHTML = "<li>No Messages</li>";
-                        message_number = 0
                     }
                     else
                     {
                         create_HTML = '';
-
-                        list_of_messages = String(snapshot.val()).split(',');
-                        message_number = list_of_messages.length;
-                        for(var i = 0; i < list_of_messages.length; i++)
-                        {
-                            create_HTML += '<li>' + list_of_messages[i] + '</li>';
-                        }
-
+                        
+                        snapshot.forEach(function(childSnapshot){
+                            create_HTML += '<li>' + childSnapshot.val() + '</li>';
+                        });
+                        
                         messages_list.innerHTML = create_HTML;
                     }
                 }
@@ -51,13 +45,6 @@ firebase.auth().signInWithPopup(provider).then(function(results){
 });
 
 
-
-
-
-firebaseValueRef.on('child_added', function(snapshot){
-   message_number += 1; 
-});
-
 function signout()
 {
     firebase.auth().signOut().then(function(){
@@ -70,6 +57,6 @@ function signout()
 function sendData()
 {
     var input_text_element = document.getElementById("textInput");
-    firebaseValueRef.child(String(message_number)).set(firebase.auth().currentUser.displayName + ': ' + input_text_element.value)
+    firebaseValueRef.post().set(firebase.auth().currentUser.displayName + ': ' + input_text_element.value)
     input_text_element.value = ''
 }
