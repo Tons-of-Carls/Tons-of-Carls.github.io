@@ -3,26 +3,31 @@ function getTunnelID(){
 	return document.getElementById("NgrokTunnelID").value
 }
 
+function command(url){
+	fetch(url, {
+		mode: "no-cors"
+	})
+}
 
 // Down
 function forwardLeftDown(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/left?left=0.5")
+	command("https://" + id +".ngrok.io/left?left=0.5")
 }
 
 function forwardRightDown(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/right?right=0.5")
+	command("https://" + id +".ngrok.io/right?right=0.5")
 }
 
 function backwardLeftDown(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/left?left=-0.5")
+	command("https://" + id +".ngrok.io/left?left=-0.5")
 }
 
 function backwardRightDown(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/right?right=-0.5")
+	command("https://" + id +".ngrok.io/right?right=-0.5")
 }
 
 
@@ -30,28 +35,28 @@ function backwardRightDown(){
 // Up
 function forwardLeftUp(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/left?left=0")
+	command("https://" + id +".ngrok.io/left?left=0")
 }
 
 function forwardRightUp(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/right?right=0")
+	command("https://" + id +".ngrok.io/right?right=0")
 }
 
 function backwardLeftUp(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/left?left=0")
+	command("https://" + id +".ngrok.io/left?left=0")
 }
 
 function backwardRightUp(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/right?right=0")
+	command("https://" + id +".ngrok.io/right?right=0")
 }
 
 
 function emergencyStop(){
 	id = getTunnelID()
-	fetch("https://" + id +".ngrok.io/emergencyStop")
+	command("https://" + id +".ngrok.io/emergencyStop")
 }
 
 
