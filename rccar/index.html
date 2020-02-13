@@ -7,7 +7,7 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+		<script src="scripts/rc.js"></script>
 		<title>RC Car Controller</title>
 	</head>
 	
@@ -31,10 +31,10 @@
 			
 			<div class="row">
 				<div class="col">
-					<button id="forward-left" type="button" class="btn btn-primary btn-lg btn-block">Forward</button>
+					<button id="forward-left" ontouchstart="forwardLeftDown()" ontouchend="forwardLeftUp()" type="button" class="btn btn-primary btn-lg btn-block">Forward</button>
 				</div>
 				<div class="col">
-					<button id="forward-right" type="button" class="btn btn-primary btn-lg btn-block">Forward</button>
+					<button id="forward-right" ontouchstart="forwardRightDown()" ontouchend="forwardRightUp()" type="button" class="btn btn-primary btn-lg btn-block">Forward</button>
 				</div>
 			</div>
 			<br/>
@@ -43,10 +43,10 @@
 			<br/>
 			<div class="row">
 				<div class="col">
-					<button id="backward-left" type="button" class="btn btn-success btn-lg btn-block">Backwards</button>
+					<button id="backward-left" ontouchstart="backwardLeftDown()" ontouchend="backwardLeftUp()" type="button" class="btn btn-success btn-lg btn-block">Backwards</button>
 				</div>
 				<div class="col">
-					<button id="backward-right" type="button" class="btn btn-success btn-lg btn-block">Backwards</button>
+					<button id="backward-right" ontouchstart="backwardRightDown()" ontouchend="backwardRightUp()" type="button" class="btn btn-success btn-lg btn-block">Backwards</button>
 				</div>
 			</div>
 			
@@ -57,12 +57,10 @@
 			
 			<div class="row">
 				<div class="col">
-					<button id="EmergencyStop" type="button" class="btn btn-danger btn-lg btn-block">Emergency Stop</button>
+					<button id="EmergencyStop" ontouchstart="emergencyStop()" type="button" class="btn btn-danger btn-lg btn-block">Emergency Stop</button>
 				</div>
 			</div>
 		</div>
-		
-		<script src="scripts/rc.js"></script
 		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

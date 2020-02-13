@@ -59,18 +59,19 @@ function emergencyStop(){
 	command("https://" + id +".ngrok.io/emergencyStop")
 }
 
+/*
+document.getElementById("forward-left").ontouchstart = forwardLeftDown
+document.getElementById("forward-left").ontouchend = forwardLeftUp
 
-document.getElementById("forward-left").onmousedown = forwardLeftDown
-document.getElementById("forward-left").onmouseup = forwardLeftUp
+document.getElementById("forward-right").ontouchstart = forwardRightDown
+document.getElementById("forward-right").ontouchend = forwardRightUp
 
-document.getElementById("forward-right").onmousedown = forwardRightDown
-document.getElementById("forward-right").onmouseup = forwardRightUp
+document.getElementById("backward-left").ontouchstart = backwardLeftDown
+document.getElementById("backward-left").ontouchend = backwardLeftUp
 
-document.getElementById("backward-left").onmousedown = backwardLeftDown
-document.getElementById("backward-left").onmouseup = backwardLeftUp
-
-document.getElementById("backward-right").onmousedown = backwardRightDown
-document.getElementById("backward-right").onmouseup = backwardRightUp
+document.getElementById("backward-right").ontouchstart = backwardRightDown
+document.getElementById("backward-right").ontouchend = backwardRightUp
 
 
-document.getElementById("EmergencyStop").onmousedown = emergencyStop
+document.getElementById("EmergencyStop").ontouchstart = emergencyStop
+*/
