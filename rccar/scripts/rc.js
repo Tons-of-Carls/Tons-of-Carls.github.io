@@ -12,22 +12,22 @@ function command(url){
 // Down
 function forwardLeftDown(){
 	id = getTunnelID()
-	command("https://" + id +".ngrok.io/left?left=0.5")
+	command("https://" + id +".ngrok.io/left?left=1")
 }
 
 function forwardRightDown(){
 	id = getTunnelID()
-	command("https://" + id +".ngrok.io/right?right=0.5")
+	command("https://" + id +".ngrok.io/right?right=1")
 }
 
 function backwardLeftDown(){
 	id = getTunnelID()
-	command("https://" + id +".ngrok.io/left?left=-0.5")
+	command("https://" + id +".ngrok.io/left?left=-1")
 }
 
 function backwardRightDown(){
 	id = getTunnelID()
-	command("https://" + id +".ngrok.io/right?right=-0.5")
+	command("https://" + id +".ngrok.io/right?right=-1")
 }
 
 
